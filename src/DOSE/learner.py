@@ -192,7 +192,7 @@ def train(args, params):
   
   dataset = from_path('./data/voicebank/noisy_trainset_wav',
         './data/voicebank/clean_trainset_wav', params)
-  device = torch.device('cuda', args.device_num)
+  device = torch.device('cuda', 0)
   model = DOSE(params).to(device)
   _train_impl(0, model, dataset, args, params)
 
